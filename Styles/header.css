@@ -1,0 +1,171 @@
+header {
+    height: 85px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 11%;
+    flex-wrap: wrap;
+    background: transparent;
+    width:100%;
+    z-index: 100;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  gap: 25px;
+  flex-wrap:wrap;
+  width:50%; /* --- MODIFIED: Initial width for larger screens --- */
+  position:relative;
+  right:0px;
+}
+
+.details a {
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+  margin-left: 35px; /* Assuming spacing between links is still needed */
+  transition: color 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+animation: slideTop 0.5s ease forwards;
+animation-delay: calc(0.2s * var(--i));
+
+}
+
+.details a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  height: 2px;
+  width: 100%;
+  background-color: #0ef;
+  transition: transform 0.3s ease;
+}
+
+.details a:hover {
+  color: #0ef;
+  transform: translateY(-2px);
+}
+
+.details a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.details a.active {
+  color: #0ef;
+}
+
+.portfolio{
+    font-size:25px;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    cursor:default;
+    font-family: 'Dancing Script', cursive;
+
+    width:auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 50px;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+
+}
+/* KEYFRAMES ANIMATION */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* --- MODIFIED: Adjusted media query for wider mobile and tablet range --- */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 20px 5%; /* --- MODIFIED: Reduced padding for smaller screens --- */
+  }
+
+  .portfolio {
+    margin-right: 0; /* --- MODIFIED: Remove right margin on smaller screens --- */
+  }
+
+  .hamburger {
+    display: block; /* --- MODIFIED: Display hamburger icon --- */
+    order: 2; /* --- ADDED: Place hamburger icon on the right --- */
+  }
+
+  .details {
+    display: none; /* --- MODIFIED: Hide by default on smaller screens --- */
+    flex-direction: column;
+    background-color: #1f242d;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* --- MODIFIED: Position below header --- */
+    left: 0;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* --- ADDED: Shadow for dropdown effect --- */
+    transition: all 0.3s ease-in-out; /* --- ADDED: Smooth transition for opening/closing --- */
+    opacity: 0; /* --- ADDED: Hidden by default for transition --- */
+    visibility: hidden; /* --- ADDED: Hidden by default for transition --- */
+    transform: translateY(-20px); /* --- ADDED: Initial state for slide-down animation --- */
+  }
+
+  .details.show {
+    display: flex;
+    opacity: 1; /* --- ADDED: Show with full opacity --- */
+    visibility: visible; /* --- ADDED: Make visible --- */
+    transform: translateY(0); /* --- ADDED: Slide down to original position --- */
+  }
+
+  .details a {
+    margin: 10px 0;
+    font-size: 20px; /* --- ADDED: Slightly larger font for mobile links --- */
+  }
+}
+
+/* --- ADDED: Media query for small mobile screens to further adjust header padding --- */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 15px 4%; /* Further reduce padding */
+    }
+    .portfolio h2 {
+        font-size: 22px; /* Adjust portfolio title size */
+    }
+    .hamburger {
+        font-size: 26px; /* Adjust hamburger icon size */
+    }
+}

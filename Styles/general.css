@@ -1,0 +1,55 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Strictly prevent any page-level scrolling */
+    position: fixed; /* Lock body in place so anchors don't yank it */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1f242d;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+/* --- ADDED: Class to prevent scrolling when mobile nav is open --- */
+body.no-scroll {
+    overflow: hidden; /* This will hide both x and y scrollbars */
+}
+
+#universeCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* This places it behind other content */
+    display: block;
+    background: radial-gradient(ellipse at bottom, #0d1a2f 0%, #040910 100%);
+}
+
+.content-wrapper {
+    position: absolute;
+    top: 85px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

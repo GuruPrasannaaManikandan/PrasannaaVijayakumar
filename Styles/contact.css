@@ -1,0 +1,139 @@
+/* Styles for Contact Page */
+.contact-section {
+  width: 100%;
+  min-height: calc(100vh - 85px);
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-heading {
+  font-size: clamp(32px, 5vw, 48px);
+  color: #fff;
+  margin-bottom: 3rem;
+  text-align: center;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+}
+
+.contact-heading span {
+  color: #0ef;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.contact-info {
+  flex: 1 1 350px;
+  background: rgba(31, 36, 45, 0.6);
+  border: 1px solid rgba(0, 238, 255, 0.2);
+  border-radius: 15px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.contact-info h3 {
+  font-size: 28px;
+  color: #0ef;
+  margin-bottom: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.info-item i {
+  font-size: 24px;
+  color: #0ef;
+  margin-right: 15px;
+}
+
+.info-item p {
+  color: #fff;
+  font-size: 16px;
+}
+
+.contact-form {
+  flex: 1 1 450px;
+  background: rgba(31, 36, 45, 0.6);
+  border: 1px solid rgba(0, 238, 255, 0.2);
+  border-radius: 15px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.input-box {
+  margin-bottom: 1.5rem;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  transition: .3s ease;
+}
+
+.input-box textarea {
+  resize: none;
+  height: 150px;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+  border-color: #0ef;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 238, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #0ef;
+  color: #1f242d;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00dce0;
+  transition: .3s ease;
+}
+
+.submit-btn:hover {
+  background: transparent;
+  color: #0ef;
+  border: 2px solid #0ef;
+  box-shadow: 0 0 30px #0ef;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 80px 5%;
+  }
+}
