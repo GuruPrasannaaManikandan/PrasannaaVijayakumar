@@ -179,11 +179,15 @@
   opacity: 0;
   animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
   animation-delay: 2s, 3s;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .hex-container {
-  width: 384px;  /* Increased to create the outer margin */
-  height: 584px; /* Increased to create the outer margin */
+  width: 90%;
+  max-width: 384px;
+  aspect-ratio: 384 / 584;
   background-color: #0ef;
   clip-path: polygon(50% 0%, 100% 12%, 100% 88%, 50% 100%, 0% 88%, 0% 12%);
   display: flex;
@@ -192,8 +196,8 @@
 }
 
 .hex-container img {
-  width: 350px; /* Original exact dimension */
-  height: 550px; /* Original exact dimension */
+  width: 91.14%; 
+  height: 94.17%; 
   object-fit: cover;
   clip-path: polygon(50% 0%, 100% 12%, 100% 88%, 50% 100%, 0% 88%, 0% 12%);
 }
@@ -288,6 +292,11 @@
         flex: 1 1 100%; /* Take full width on smaller screens */
         justify-content: center; /* Center image horizontally */
         margin-left: 0; /* Remove auto margin on smaller screens */
+    }
+
+    .hex-glow {
+        margin-right: 0;
+        margin-bottom: 40px;
     }
 
     .social-media {
