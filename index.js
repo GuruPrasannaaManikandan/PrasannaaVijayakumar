@@ -11,7 +11,7 @@ if (typeof Typed !== 'undefined') {
     }
     if (document.querySelector(".multiple")) {
         var typed2 = new Typed(".multiple", {
-            strings: ["Youtuber.", "Blogger."],
+            strings: ["an AI ", "a ML "],
             typeSpeed: 100,
             backSpeed: 200,
             backDelay: 1000,
@@ -37,7 +37,7 @@ navLinks.querySelectorAll('a').forEach(link => {
         e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-        if(targetElement) {
+        if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
@@ -59,7 +59,7 @@ scrollWrapper.addEventListener('scroll', () => {
     sections.forEach(section => {
         // Find the relative offset top of the section inside the scrollWrapper
         const sectionTop = section.offsetTop;
-        
+
         // Use scrollWrapper.scrollTop to track the scroll position
         if (scrollWrapper.scrollTop >= (sectionTop - 150)) {
             current = section.getAttribute('id');
@@ -109,7 +109,7 @@ function Star() {
     this.opacityDirection = Math.random() > 0.5 ? 0.005 : -0.005;
 
     // Method to draw a single star
-    this.draw = function() {
+    this.draw = function () {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); // Draw a circle
         ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`; // White color with varying opacity
@@ -117,7 +117,7 @@ function Star() {
     };
 
     // Method to update a star's position and opacity
-    this.update = function() {
+    this.update = function () {
         this.x -= this.speed; // Move stars from right to left
         // If star moves off-screen to the left, reset its position to the right
         if (this.x < 0) {
@@ -161,7 +161,7 @@ function MilkyWay(x, y, width, height, angle, color1, color2, rotationSpeed) {
     this.rotationSpeed = rotationSpeed; // Speed of continuous rotation
 
     // Method to draw the Milky Way band
-    this.draw = function() {
+    this.draw = function () {
         ctx.save(); // Save current canvas state
         ctx.translate(this.x, this.y); // Move origin to Milky Way's center
         // Apply both the fixed angle and the continuous rotation
@@ -187,7 +187,7 @@ function MilkyWay(x, y, width, height, angle, color1, color2, rotationSpeed) {
     };
 
     // Method to update Milky Way's properties
-    this.update = function() {
+    this.update = function () {
         // Subtle pulsing effect for opacity
         this.opacity += this.pulseDirection;
         if (this.opacity > 0.2 || this.opacity < 0.1) {
@@ -241,7 +241,7 @@ function animate() {
 window.addEventListener('resize', resizeCanvas);
 
 // Start the animation and initialize elements when the window finishes loading
-window.onload = function() {
+window.onload = function () {
     resizeCanvas(); // Initial canvas resize
     initStars();    // Initialize all stars
     initMilkyWay(); // Initialize the Milky Way
@@ -258,7 +258,7 @@ window.addEventListener('beforeunload', () => {
 // --- ADDED: Contact Form Mailto Logic ---
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent the default form submission page reload
 
         const name = document.getElementById('contact-name').value;
@@ -268,7 +268,7 @@ if (contactForm) {
 
         // Construct a clean, perfectly formatted email body
         const mailBody = `Contact Request via Portfolio\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-        
+
         // URL encode the parameters so spaces and paragraphs correctly format in the email client
         const encodedSubject = encodeURIComponent(subject || `New Contact from ${name}`);
         const encodedBody = encodeURIComponent(mailBody);
